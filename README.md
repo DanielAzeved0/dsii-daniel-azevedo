@@ -1,2 +1,2 @@
-# ssi-daniel-azevedo
-Aulas de Segurança de Sistemas de Informação com o professor Roberto Itai
+# dsii-daniel-azevedo
+Aulas de Desenvolvimento de Sistemas II com o professor Roberto Itai
