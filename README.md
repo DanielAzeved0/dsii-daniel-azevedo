@@ -1,2 +1,264 @@
 # dsii-daniel-azevedo
 Aulas de Desenvolvimento de Sistemas II com o professor Roberto Itai
+
+## **Aula 01 – Introdução ao Python e Variáveis**
+**Impressão de texto:**
+
+```
+print('       * ')
+print('      *** ')
+print('     ***** ')
+print('    ******* ')
+print('   ********* ')
+print('  *********** ')
+print(' ************* ')
+print('      ***\n      ***\n      ***\n')
+```
+
+**Variáveis e tipos:**
+
+```
+x = 3
+print(x)
+print(type(x))
+```
+
+**Entrada de dados:**
+
+```
+x = int(input('Digite um numero: '))
+print(x)
+```
+
+## **Aula 02 – Operações e Entrada de Dados**
+**Cálculo do quadrado:**
+
+```
+num = int(input('Digite um numero: '))
+x = num ** 2
+print('O quadrado do numero', num, 'é: ', x)
+```
+
+**Média de notas:**
+
+```
+nota01 = int(input('Digite a nota do Aluno: '))
+nota02 = int(input('Digite a nota do Aluno: '))
+nota03 = int(input('Digite a nota do Aluno: '))
+notasSomadas = nota01 + nota02 + nota03
+notaFinal = notasSomadas / 3
+print('A nota final é: ', notaFinal)
+```
+
+**Concatenação e soma:**
+
+```
+a = 5
+b = 3
+soma = a + b
+print(soma)
+c = "4"
+d = "7"
+concatenar = c + d
+print(concatenar)
+```
+
+## **Aula 03 – Estruturas Condicionais**
+**Verificação de média:**
+
+```
+media01 = float(input('Digite a média do aluno do primeiro semestre: '))
+media02 = float(input('Digite a média do aluno do segundo semestre: '))
+mediasSomadas = media01 + media02
+mediaFinal = mediasSomadas / 2
+if mediaFinal > 6:
+    print ('A média informada é: ', mediaFinal, 'Aluno foi aprovado')
+elif mediaFinal >= 4 and mediaFinal <= 4.5:
+    print ('A média informada é:', mediaFinal, 'Aluno ficou de recuperação')
+else:
+    print (f'A média informada é:  {mediaFinal}, Aluno foi reprovado')
+```
+
+**Comparação de números:**
+
+```
+Numero01 = int(input('Digite o primeiro numero: '))
+Numero02 = int(input('Digite o segundo numero: '))
+if Numero01 > Numero02:
+    print (Numero01, 'é maior que', Numero02)
+else:
+    print (Numero02, 'é maior que', Numero01)
+```
+
+**Paridade:**
+
+```
+numero = int(input('Digite um numero: '))
+if numero %2 == 0:
+    print('esse numero é par')
+else:
+    print('esse numero é impar')
+```
+
+## **Aula 04 – Exercícios de Condicionais**
+**Futebol:**
+
+```
+golsTime01 = float(input('Quantos gols o time 1 fez ? '))
+golsTime02 = float(input('quantos gols o time 2 fez ? '))
+if golsTime01 > golsTime02:
+    print('Time 1 fez mais gols que o time 2')
+elif golsTime01 == golsTime02:
+    print ('Os times empataram')
+else:
+    print('Time 2 fez mais gols que o time 1')
+```
+
+**Finanças:**
+
+```
+valorPrestacao = int(input('Valor das prestações? '))
+parcelas = int(input('Quantidade de parcelas? '))
+valorSemJuros = valorPrestacao / parcelas
+print('O valor sem juros é: ', valorSemJuros)
+```
+
+**Natação:**
+
+```
+idade = int(input("Digite a idade do nadador: "))
+if idade >= 5 and idade <= 7:
+    print("Categoria: Infantil A")
+elif idade >= 8 and idade <= 11:
+    print("Categoria: Infantil B")
+elif idade >= 12 and idade <= 13:
+    print("Categoria: Juvenil A")
+elif idade >= 14 and idade <= 17:
+    print("Categoria: Juvenil B")
+elif idade >= 18:
+    print("Não tem idade para competir.")
+```
+
+## **Aula 05 – Estruturas de Repetição e Listas**
+**For e listas:**
+
+```
+for lista in [1,2,3,4,5,6]:
+    print(lista)
+```
+
+**Range:**
+
+```
+for lista in range(10):
+    print(lista)
+```
+
+**Criação e manipulação de listas:**
+
+```
+lista_vazia = []
+numero = [1,2,3,4,5]
+lista_mista = [1, "dois", 3.0]
+lista_aninhada = [[1,2], [3,4], [5,6]]
+```
+
+**Adição e remoção de elementos:**
+
+```
+lista = [1,2,3]
+lista.append(4)
+lista.insert(0,7)
+lista.remove(2)
+print(lista)
+```
+
+## **Aula 06 – Projeto de calculadora**
+
+Criar uma calculadora funcional em Python que permite ao usuário realizar diversas operações matemáticas, repetidamente, até decidir sair do programa.
+
+🧩 Funcionalidades
+
+A calculadora implementa as seguintes operações:
+
+➕ Soma
+➖ Subtração
+✖️ Multiplicação
+➗ Divisão
+🔺 Exponenciação (e^x)
+✅ Potenciação com número personalizado (x^y)
+📐 Raiz quadrada
+
+🔁 Lógica do Programa
+
+A calculadora exibe um menu de operações.
+O usuário escolhe uma opção e informa os valores.
+A operação é realizada e o resultado é exibido.
+O programa permanece em execução até que o usuário escolha sair.
+A opção de "sair" é exibida somente após a primeira operação.
+Tratamento de erros incluído para casos como:
+
+Divisão por zero.
+Raiz quadrada de número negativo.
+🖥️ Exemplo de Código da Calculadora (real do projeto)
+
+```
+import math
+primeira_operacao = True
+while True:
+    print('Calculadora Simples do Daniel da Silva Azevedo')
+    print('1 - Soma')
+    print('2 - Subtração')
+    print('3 - Multiplicação')
+    print('4 - Divisão')
+    print('5 - Exponenciação (e^x)')
+    print('6 - Raiz quadrada')
+    print('7 - Potenciação (x^y)')
+    if not primeira_operacao:
+        print('0 - Sair')
+    op = input('Escolha a operação: ')
+    if not primeira_operacao and op == '0':
+        print('Saindo da calculadora. Até logo!')
+        break
+    elif op == '1':
+        numero1 = float(input('Digite o primeiro número: '))
+        numero2 = float(input('Digite o segundo número: '))
+        print('Resultado:', numero1 + numero2)
+    elif op == '2':
+        numero1 = float(input('Digite o primeiro número: '))
+        numero2 = float(input('Digite o segundo número: '))
+        print('Resultado:', numero1 - numero2)
+    elif op == '3':
+        numero1 = float(input('Digite o primeiro número: '))
+        numero2 = float(input('Digite o segundo número: '))
+        print('Resultado:', numero1 * numero2)
+    elif op == '4':
+        numero1 = float(input('Digite o primeiro número: '))
+        numero2 = float(input('Digite o segundo número: '))
+        if numero2 == 0:
+            print('Erro: divisão por zero')
+        else:
+            print('Resultado:', numero1 / numero2)
+    elif op == '5':
+        x = float(input('Digite o valor de x para e^x: '))
+        print('Resultado:', math.exp(x))
+    elif op == '6':
+        x = float(input('Digite o número para raiz quadrada: '))
+        if x < 0:
+            print('Erro: número negativo não possui raiz real')
+        else:
+            print('Resultado:', math.sqrt(x))
+    elif op == '7':
+        x = float(input('Digite o valor de x: '))
+        y = float(input('Digite o valor de y: '))
+        print('Resultado:', x ** y)
+    else:
+        print('Opção inválida')
+        print()
+        continue
+    primeira_operacao = False
+    print()
+```
+
+**Conclusão:**
+O projeto permitiu a aplicação prática de diversos conceitos essenciais da linguagem Python, como estruturas condicionais, entrada e saída de dados, manipulação de listas e laços de repetição. A construção da calculadora serviu como um exercício integrador, consolidando o aprendizado adquirido nas aulas anteriores.
