@@ -262,3 +262,124 @@ while True:
 
 **Conclusão:**
 O projeto permitiu a aplicação prática de diversos conceitos essenciais da linguagem Python, como estruturas condicionais, entrada e saída de dados, manipulação de listas e laços de repetição. A construção da calculadora serviu como um exercício integrador, consolidando o aprendizado adquirido nas aulas anteriores.
+
+## **Aula 07 – Funções em Python**
+
+Nesta aula, aprendemos sobre a definição, chamada e utilidade das funções em Python. Funções permitem organizar o código em blocos reutilizáveis, facilitando a manutenção e a legibilidade.
+
+**Exemplo de função simples:**
+
+```
+def saudacao():
+    print("Olá, bem-vindo à aula de funções!")
+
+saudacao()
+```
+
+**Função com parâmetros e retorno:**
+
+```
+def soma(a, b):
+    return a + b
+
+resultado = soma(5, 3)
+print("O resultado da soma é:", resultado)
+```
+
+**Função para verificar se um número é par:**
+
+```
+def eh_par(numero):
+    return numero % 2 == 0
+
+num = int(input("Digite um número: "))
+if eh_par(num):
+    print("O número é par.")
+else:
+    print("O número é ímpar.")
+```
+
+**Principais tópicos abordados:**
+- Definição de funções com `def`
+- Parâmetros e argumentos
+- Retorno de valores com `return`
+- Escopo de variáveis
+- Reutilização de código
+
+**Conclusão:**  
+O uso de funções torna o código mais organizado, modular e fácil de entender. Elas são fundamentais para projetos maiores e para evitar repetição de código.
+
+## **Aula 08 – Conexão com Banco de Dados MySQL**
+
+Nesta aula, aprendemos como conectar um programa Python a um banco de dados MySQL, realizar inserções e consultas, e tratar possíveis erros de conexão ou operação.
+
+**Principais tópicos abordados:**
+- Instalação do driver MySQL para Python (`mysql-connector-python`)
+- Estabelecimento de conexão com o banco de dados
+- Inserção de dados usando comandos SQL parametrizados
+- Consulta e exibição de registros do banco
+- Tratamento de exceções e fechamento seguro da conexão
+
+**Exemplo de código:**
+
+```python
+import mysql.connector
+
+try:
+    conexao = mysql.connector.connect(
+        host="localhost",
+        database="senaisql",
+        user="root",
+        password="senai",
+        port=3306,
+        auth_plugin='mysql_native_password'
+    )
+    cursor = conexao.cursor()
+
+    while True:
+        nome = input("Digite o Nome: ")
+        sobrenome = input("Digite o Sobrenome: ")
+        idade = int(input("Digite a Idade: "))
+        sexo = input("Digite o Sexo (M/F): ").upper()
+
+        try:
+            cursor.execute(
+                "INSERT INTO Cadastro (Nome, Sobrenome, Idade, Sexo) VALUES (%s, %s, %s, %s)",
+                (nome, sobrenome, idade, sexo)
+            )
+            conexao.commit()
+            print("Dados inseridos com sucesso!")
+        except mysql.connector.Error as e:
+            print(f"Erro ao inserir dados: {e}")
+            conexao.rollback()
+
+        continuar = input("Deseja continuar? (s/n) ")
+        if continuar.lower() == "n":
+            break
+
+    cursor.execute("SELECT * FROM Cadastro")
+    registros = cursor.fetchall()
+    for row in registros:
+        print("Nome = ", row[0])
+        print("Sobrenome = ", row[1])
+        print("Idade = ", row[2])
+        print("Sexo  = ", row[3], "\n")
+
+except mysql.connector.Error as e:
+    print(f"Erro de conexão/operação com o banco de dados: {e}")
+
+finally:
+    if cursor:
+        cursor.close()
+    if conexao:
+        conexao.close()
+```
+
+**Resumo:**  
+O código acima permite inserir novos registros em uma tabela chamada `Cadastro` e, ao final, exibe todos os registros cadastrados. O tratamento de exceções garante que erros de conexão ou operação sejam informados ao usuário e que a conexão com o banco seja fechada corretamente.
+
+**Dica:**  
+Para usar o MySQL com Python, instale o driver com:
+```
+pip install mysql-connector-python
+```
