@@ -1,42 +1,34 @@
-SET DATESTYLE TO PostgreSQL,European;
+create database etecDB;
 
-CREATE SEQUENCE IDVendedor;
-CREATE TABLE Vendedores(
-  IDVendedor int default nextval('IDVendedor'::regclass) PRIMARY KEY,
-  Nome Varchar(50)
+use etecDB;
+
+CREATE TABLE Clientes (
+  IDCliente INT AUTO_INCREMENT PRIMARY KEY,
+  Cliente VARCHAR(50),
+  Estado VARCHAR(2),
+  Sexo CHAR(1),
+  Status VARCHAR(50)
 );
 
-CREATE SEQUENCE IDProduto;
-CREATE TABLE Produtos(
-  IDProduto int default nextval('IDProduto'::regclass) PRIMARY KEY,
-  Produto Varchar(100),
-  Preco Numeric(10,2)
-);
-
-CREATE SEQUENCE IDCliente;
-CREATE TABLE Clientes(
-  IDCliente int default nextval('IDCliente'::regclass) PRIMARY KEY,
-  Cliente Varchar(50),
-  Estado Varchar(2),
-  Sexo Char(1),
-  Status Varchar(50)
-);
-
-CREATE SEQUENCE IDVenda;
-CREATE TABLE Vendas(
-  IDVenda int default nextval('IDVenda'::regclass) PRIMARY KEY,
-  IDVendedor int references Vendedores (IDVendedor),
-  IDCliente int references Clientes (IDCliente),
-  Data Date,
-  Total Numeric(10,2)
+CREATE TABLE Vendas (
+  IDVenda INT AUTO_INCREMENT PRIMARY KEY,
+  IDVendedor INT,
+  IDCliente INT,
+  Data DATE,
+  Total DECIMAL(10,2),
+  FOREIGN KEY (IDVendedor) REFERENCES Vendedores(IDVendedor),
+  FOREIGN KEY (IDCliente) REFERENCES Clientes(IDCliente)
 );
 
 CREATE TABLE ItensVenda (
-    IDProduto int REFERENCES Produtos ON DELETE RESTRICT,
-    IDVenda int REFERENCES Vendas ON DELETE CASCADE,
-    Quantidade int,
-    ValorUnitario decimal(10,2),
-    ValorTotal decimal(10,2),
-	Desconto decimal(10,2),
-    PRIMARY KEY (IDProduto, IDVenda)
+  IDProduto INT,
+  IDVenda INT,
+  Quantidade INT,
+  ValorUnitario DECIMAL(10,2),
+  ValorTotal DECIMAL(10,2),
+  Desconto DECIMAL(10,2),
+  PRIMARY KEY (IDProduto, IDVenda),
+  FOREIGN KEY (IDProduto) REFERENCES Produtos(IDProduto) ON DELETE RESTRICT,
+  FOREIGN KEY (IDVenda) REFERENCES Vendas(IDVenda) ON DELETE CASCADE
 );
+
