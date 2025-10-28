@@ -383,3 +383,18 @@ Para usar o MySQL com Python, instale o driver com:
 ```
 pip install mysql-connector-python
 ```
+## **Aula 10 – Python com MongoDB**
+
+Nesta aula vimos na prática como usar MongoDB com Python
+
+usamos o `prompt` comando para roda o a pasta "mongosh-1.9.0-win32-x64" e roda o arquivo "mongosh.exe" (tudo isso no terminal prompt), lá usamos o bando de dados usando o comando 
+```sh
+use nome-do-bando
+```
+
+depois abrimos o arquivo `index.py`, mas antes baixamos a extenção `pymong` com o comando
+```sh
+pip install pymongo
+```
+
+após isso rodamos o `index.py` no terminal e assim o programa roda 
