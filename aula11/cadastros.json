@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Daniel",
+    "sobrenome": "Azevedo",
+    "idade": 18,
+    "sexo": "Masculino",
+    "data_cadastro": "25/11/2025 19:40:50"
+  },
+  {
+    "id": 2,
+    "nome": "Daniel",
+    "sobrenome": "Azevedo",
+    "idade": 20,
+    "sexo": "Masculino",
+    "data_cadastro": "25/11/2025 19:53:41"
+  },
+  {
+    "id": 3,
+    "nome": "Daniel",
+    "sobrenome": "Azevedo",
+    "idade": 20,
+    "sexo": "Masculino",
+    "data_cadastro": "25/11/2025 19:55:59"
+  }
+]

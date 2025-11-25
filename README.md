@@ -398,3 +398,78 @@ pip install pymongo
 ```
 
 após isso rodamos o `index.py` no terminal e assim o programa roda 
+
+
+## **Aula 11 - # Sistema de Cadastro - Python
+
+## Descrição
+Sistema simples e funcional de cadastro de pessoas desenvolvido em Python com interface gráfica usando tkinter.
+
+## Funcionalidades
+- ✅ Cadastro de pessoas com nome, sobrenome, idade e sexo
+- ✅ Validação de dados de entrada
+- ✅ Armazenamento persistente em arquivo JSON
+- ✅ Interface gráfica intuitiva
+- ✅ Listagem de cadastros
+- ✅ Relatório detalhado
+- ✅ Limpeza de campos
+- ✅ Data e hora do cadastro
+
+## Campos do Cadastro
+- **Nome**: Campo obrigatório (texto)
+- **Sobrenome**: Campo obrigatório (texto)
+- **Idade**: Campo obrigatório (número entre 0 e 150)
+- **Sexo**: Campo obrigatório (seleção: Masculino, Feminino, Outro)
+
+## Como Executar
+1. Execute o arquivo `cadastro.py`
+2. A interface gráfica será aberta
+3. Preencha os campos solicitados
+4. Clique em "Cadastrar" para salvar
+
+## Botões Disponíveis
+- **Cadastrar**: Salva os dados inseridos
+- **Limpar**: Limpa todos os campos
+- **Listar**: Exibe relatório completo em nova janela
+
+## Validações Implementadas
+- Campos obrigatórios não podem ficar vazios
+- Idade deve ser um número válido entre 0 e 150
+- Nomes são formatados automaticamente (primeira letra maiúscula)
+- Sexo deve ser selecionado da lista
+
+## Armazenamento
+Os dados são salvos automaticamente no arquivo `cadastros.json` na mesma pasta do programa.
+
+## Requisitos
+- Python 3.x
+- tkinter (geralmente incluído com Python)
+- Bibliotecas padrão: json, os, datetime
+
+## Estrutura do Projeto
+```
+aula11/
+├── cadastro.py          # Arquivo principal do sistema
+├── README.md           # Documentação
+└── cadastros.json      # Arquivo de dados (criado automaticamente)
+```
+
+## Características Técnicas
+- Arquitetura orientada a objetos
+- Interface responsiva
+- Tratamento de exceções
+- Validação de entrada
+- Persistência de dados
+- Código limpo e documentado
+
+## Exemplo de Uso
+1. Abra o programa
+2. Digite "João" no campo Nome
+3. Digite "Silva" no campo Sobrenome  
+4. Digite "25" no campo Idade
+5. Selecione "Masculino" no campo Sexo
+6. Clique em "Cadastrar"
+7. O sistema confirmará o cadastro e limpará os campos
+
+---
+*Desenvolvido seguindo as boas práticas de programação e normas de ética da área.
